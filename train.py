@@ -83,7 +83,8 @@ def train(opt):
         if opt.FT:
             model.load_state_dict(torch.load(opt.saved_model), strict=False)
         else:
-            model.load_state_dict(torch.load(opt.saved_model,map_location=torch.device('cpu')))
+            model.load_state_dict(torch.load(opt.saved_model))
+            # model.load_state_dict(torch.load(opt.saved_model,map_location=torch.device('cpu'))) #only for perosonal use
     print("Model:")
     print(model)
 
